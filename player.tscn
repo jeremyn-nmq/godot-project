@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d334a0pfupatd"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_olgkn"]
+[ext_resource type="ArrayMesh" uid="uid://bvmbprki4xnnl" path="res://kenney_car-kit/Models/OBJ format/ambulance.obj" id="2_7ubrv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g5cas"]
+size = Vector3(1.36126, 1.82022, 2.9361)
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0408897, 0)
+script = ExtResource("1_olgkn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.452096, -0.0593383, -0.0138211)
+mesh = ExtResource("2_7ubrv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999968, 0, -0.00795862, 0, 1, 0, 0.00795862, 0, 0.999968, -0.39815, 0.780593, -0.136103)
+shape = SubResource("BoxShape3D_g5cas")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408198, 1.8077, 8.26765)

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uabvf6lwgs6d"
+path="res://.godot/imported/blockCornerLarge.obj-40cf118ee3fbdc7eae51ded701f3f47f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blockCornerLarge.obj-40cf118ee3fbdc7eae51ded701f3f47f.mesh"]
+
+source_file="res://kenney_platformer-kit/Models/OBJ format/blockCornerLarge.obj"
+dest_files=["res://.godot/imported/blockCornerLarge.obj-40cf118ee3fbdc7eae51ded701f3f47f.mesh", "res://.godot/imported/blockCornerLarge.obj-40cf118ee3fbdc7eae51ded701f3f47f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

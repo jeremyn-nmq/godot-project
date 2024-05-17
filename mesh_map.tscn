@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://5hogox42qqs0"]
+
+[ext_resource type="Script" path="res://mesh_map.gd" id="1_anbww"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_46775"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_46775")
+script = ExtResource("1_anbww")

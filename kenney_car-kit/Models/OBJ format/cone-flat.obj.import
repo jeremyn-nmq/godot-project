@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cuh74yrl713sl"
+path="res://.godot/imported/cone-flat.obj-16bc718b47d7b62dd04a250d17637bd6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cone-flat.obj-16bc718b47d7b62dd04a250d17637bd6.mesh"]
+
+source_file="res://kenney_car-kit/Models/OBJ format/cone-flat.obj"
+dest_files=["res://.godot/imported/cone-flat.obj-16bc718b47d7b62dd04a250d17637bd6.mesh", "res://.godot/imported/cone-flat.obj-16bc718b47d7b62dd04a250d17637bd6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

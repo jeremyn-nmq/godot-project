@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh1vy6s4u08yg"
+path="res://.godot/imported/blockEnd.obj-bd63dede3e7c100a6e2f0b125c687ae0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blockEnd.obj-bd63dede3e7c100a6e2f0b125c687ae0.mesh"]
+
+source_file="res://kenney_platformer-kit/Models/OBJ format/blockEnd.obj"
+dest_files=["res://.godot/imported/blockEnd.obj-bd63dede3e7c100a6e2f0b125c687ae0.mesh", "res://.godot/imported/blockEnd.obj-bd63dede3e7c100a6e2f0b125c687ae0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

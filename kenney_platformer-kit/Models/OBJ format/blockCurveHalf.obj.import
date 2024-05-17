@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://y7pn4dsg26sj"
+path="res://.godot/imported/blockCurveHalf.obj-8a5d44a22addc48c345e2995152e4ccd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blockCurveHalf.obj-8a5d44a22addc48c345e2995152e4ccd.mesh"]
+
+source_file="res://kenney_platformer-kit/Models/OBJ format/blockCurveHalf.obj"
+dest_files=["res://.godot/imported/blockCurveHalf.obj-8a5d44a22addc48c345e2995152e4ccd.mesh", "res://.godot/imported/blockCurveHalf.obj-8a5d44a22addc48c345e2995152e4ccd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

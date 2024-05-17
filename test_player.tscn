@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnayea415q8y4"]
+
+[ext_resource type="Script" path="res://test_player.gd" id="1_ffl18"]
+[ext_resource type="ArrayMesh" uid="uid://bvmbprki4xnnl" path="res://kenney_car-kit/Models/OBJ format/ambulance.obj" id="2_a6t42"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2v1ke"]
+size = Vector3(2, 2, 3)
+
+[node name="car" type="CharacterBody3D"]
+script = ExtResource("1_ffl18")
+
+[node name="car_mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_a6t42")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0347259, 0.776908, 0)
+shape = SubResource("BoxShape3D_2v1ke")
+
+[node name="Camera_Controller" type="Node3D" parent="."]
+top_level = true
+
+[node name="Camera_Target" type="Node3D" parent="Camera_Controller"]
+transform = Transform3D(1, 0, 0, 0, 0.0124089, 0.999923, 0, -0.999923, 0.0124089, 0, 8.69463, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
+current = true
