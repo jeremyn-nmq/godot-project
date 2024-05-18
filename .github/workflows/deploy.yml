@@ -1,42 +1,51 @@
-name: godot-ci
+name: itch.io upload
+
+# define what triggers the action
+# in this case: on push if one of the files named in paths changes
 on:
   push:
-    branches: [ main ]
+    paths:
+      - "version-android"
+      - "version-ios"
+      - ".github/workflows/upload-itchio.yml"
+
+# the directory where your game is
+# I always put the game inside a 'game' folder
 env:
-  EXPORT_NAME: godotparkingcar
-  GODOT_VERSION: 4.2
+  WORKING_DIRECTORY: game
+
 jobs:
-  export-web:
-    name: Web Export
+  deploy:
+    # only run action, if pushed on prod branch
+    # change or remove according to your needs
+    if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-20.04
-    container:
-      image: barichello/godot-ci
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      # change or remove according to your needs
+      - name: Delete iOS icons
+        run: rm -rf $WORKING_DIRECTORY/AppIcons
+
+      # change or remove according to your needs
+      - name: Create export directory
+        run: mkdir html5
+
+      # exports the game in html mode
+      # more info here https://github.com/dulvui/godot-html-export
+      - name: Godot HTML5 export
+        uses: dulvui/godot-html-export@v0.0.2
         with:
-          lfs: true
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/export_templates
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
-      - name: Web Build
-        run: |
-          mkdir -v -p build/web
-          godot --headless -v --export "HTML5" ./build/web/index.html
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+          working-directory: $WORKING_DIRECTORY
+
+      # uploads to itch.io
+      # more info here https://github.com/dulvui/itchio-butler-upload
+      - name: Upload to itch.io
+        uses: dulvui/itchio-butler-upload@v0.0.1
         with:
-          name: web
-          path: build/web
-      - name: Install rsync 📚
-        run: |
-          apt-get update && apt-get install -y rsync
-      - name: Publish to itch.io
-        uses: manleydev/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
-          CHANNEL: web
-          ITCH_GAME: godotparkingcar
-          ITCH_USER: jeremyn-nmq
-          PACKAGE: build/web
+          working-directory: html5
+          api-key: ${{ secrets.BUTLER_API_KEY }}
+          user: jeremyn-nmq
+          game: godotparkingcar
+          channel: html5
