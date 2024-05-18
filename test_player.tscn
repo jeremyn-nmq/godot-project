@@ -4,9 +4,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bvmbprki4xnnl" path="res://kenney_car-kit/Models/OBJ format/ambulance.obj" id="2_a6t42"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2v1ke"]
-size = Vector3(2, 2, 3)
+size = Vector3(0.9, 0.9, 0.5)
 
-[node name="car" type="CharacterBody3D"]
+[node name="car" type="CharacterBody3D" groups=["Car"]]
 script = ExtResource("1_ffl18")
 
 [node name="car_mesh" type="MeshInstance3D" parent="."]
@@ -24,3 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0124089, 0.999923, 0, -0.999923, 0.0124089
 
 [node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
 current = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
