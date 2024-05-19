@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnayea415q8y4"]
 
 [ext_resource type="Script" path="res://test_player.gd" id="1_ffl18"]
-[ext_resource type="ArrayMesh" uid="uid://bvmbprki4xnnl" path="res://kenney_car-kit/Models/OBJ format/ambulance.obj" id="2_a6t42"]
+[ext_resource type="ArrayMesh" uid="uid://cx2a3yje0clj3" path="res://kenney_car-kit/Models/OBJ format/police.obj" id="2_81e7k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2v1ke"]
 size = Vector3(0.9, 0.9, 0.5)
@@ -10,7 +10,7 @@ size = Vector3(0.9, 0.9, 0.5)
 script = ExtResource("1_ffl18")
 
 [node name="car_mesh" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_a6t42")
+mesh = ExtResource("2_81e7k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0347259, 0.776908, 0)
@@ -27,3 +27,6 @@ current = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.755644, 0.00856358, 6.15899e-07, 0.996078)
+debug_path_custom_point_size = 8.52
