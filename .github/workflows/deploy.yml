@@ -25,7 +25,7 @@ jobs:
       - name: Web Build
         run: |
           mkdir -v -p build/web
-          cd $PROJECT_PATH
+          ls ~/.local/share/godot
           godot --headless --verbose --export-release "HTML5" ../build/web/index.html
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
