@@ -1,7 +1,7 @@
 extends Control
 @onready var http_request = $MarginContainer/VBoxContainer/Go/HTTPRequest
 
-var url = "https://66485f3c2bb946cf2fa05256.mockapi.io/json"
+var url = "https://empty-parking-lot-detection-jeremys-projects-cce1bf08.vercel.app/api/getParkingMap"
 
 func _on_go_pressed():
 	http_request.request(url)
