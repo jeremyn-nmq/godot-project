@@ -4,27 +4,29 @@ on:
     branches: [ main ]
 env:
   EXPORT_NAME: godotparkingcar
-  GODOT_VERSION: 4.2
+  PROJECT_PATH: godotparkingcar
+  GODOT_VERSION: 4.2.1
 jobs:
   export-web:
     name: Web Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:4.2
+      image: barichello/godot-ci:4.2.1
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           lfs: true
-#      - name: Setup
-#        run: |
-#          mkdir -v -p ~/.local/share/godot/export_templates
-#          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Web Build
         run: |
           mkdir -v -p build/web
-          godot --headless -v --export-release "Web" ./build/web/index.html
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-release "HTML5" ../build/web/index.html
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
