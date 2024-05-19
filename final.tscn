@@ -214,7 +214,7 @@ shape = SubResource("ConcavePolygonShape3D_3ipw8")
 shape = SubResource("ConcavePolygonShape3D_yo6sy")
 
 [node name="car" parent="." instance=ExtResource("2_6nonn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.989993, 0.164798, 2.77451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.578089, 0.0755546, 2.0183)
 
 [node name="Target" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84437, 0.103379, 4.46506)

@@ -31,7 +31,7 @@ func _physics_process(delta):
 	var current_location = position
 	var next_location = nav.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
-	velocity = velocity.move_toward(new_velocity, .25)
+	velocity = velocity.move_toward(new_velocity, 1)
 	
 	move_and_slide()
 	#if(direction.x > 0 && direction.z > 0):
